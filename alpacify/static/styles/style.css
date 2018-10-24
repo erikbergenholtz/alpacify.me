@@ -1,0 +1,66 @@
+body {
+    background:#0fc4df;
+    padding:20px;
+    height:100%;
+}
+a{
+	color:#6767ad;
+	text-decoration:none;
+}
+a:hover{
+	font-weight:bold;
+	text-decoration:underline;
+}
+.wrapper{
+    position:relative;
+    width:738px;
+    margin:0 auto;
+    background:#9fe7f2;
+    padding:12px;
+}
+.explanation {
+    position:relative;
+    padding: 12px;
+}
+.menu{
+	width:95%;
+}
+.menu table{
+	width:100%;
+}
+.menu td{
+	width:150px;
+}
+.error{
+	font-style:italic;
+	color:red;
+	font-size:12px;
+}
+#alpaca{
+	position:absolute;
+}
+.imgHolder{
+	position:relative;
+}
+
+/*
+     FILE ARCHIVED ON 19:23:56 Oct 14, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:36:36 Oct 22, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 78.837 (3)
+  esindex: 0.006
+  captures_list: 109.502
+  CDXLines.iter: 11.848 (3)
+  PetaboxLoader3.datanode: 110.167 (5)
+  exclusion.robots: 0.184
+  exclusion.robots.policy: 0.169
+  RedisCDXSource: 15.819
+  PetaboxLoader3.resolve: 65.169 (2)
+  load_resource: 167.314
+*/

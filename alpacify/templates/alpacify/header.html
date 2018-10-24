@@ -1,0 +1,10 @@
+<p>Upload an image to see how you'd look if you were a fluffy alpaca!</p>
+<fieldset>
+    <legend>Image upload</legend>
+    The image may not be larger than 2MB.
+    <form action="alpacify" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="file" type="file"><br>
+        <input name="submit" value="Alpacify me!" type="submit">
+    </form>
+</fieldset>

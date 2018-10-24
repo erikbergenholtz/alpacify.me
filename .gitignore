@@ -1,3 +1,8 @@
+# Django settings
+alpacifyme/
+manage.py
+db.sqlite3
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -102,3 +107,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# virtualenv
+bin
+include
+lib
+share
