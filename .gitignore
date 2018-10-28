@@ -4,6 +4,7 @@ manage.py
 db.sqlite3
 .*.swp
 .*.swo
+alpacify/migrations
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

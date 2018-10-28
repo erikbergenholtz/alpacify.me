@@ -4,7 +4,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 from . forms import UploadImageForm, ShareFluffForm
+from . models import Image
 from . alpacify import alpacify
+import hashlib
 
 def index(request):
     return render(request, 'alpacify/index.html', None)
@@ -26,8 +28,10 @@ def share(request):
         form = ShareFluffForm(request.POST)
         if form.is_valid():
             img = request.POST['img']
-            print(img)
             cxt['valid'] = True
+            i = Image(image_b64 = img,
+                      image_hash = hashlib.md5(img.encode('utf-8')).hexdigest())
+            i.save()
     return render(request, 'alpacify/share.html', cxt)
 
 def credits(request):
