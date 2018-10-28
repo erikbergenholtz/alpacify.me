@@ -1,0 +1,17 @@
+{% extends 'alpacify/template.html' %}
+
+{% block content %}
+    {% if valid %}
+        <p>
+            Thanks for sharing the fluff! Head over to the <a
+            href='gallery'>gallery</a> to see more fluffiness! And remember, if
+            you regret your decision, just <a href='contact'>contact me</a> and
+            I'll remove the image for you.
+        </p>
+    {% else %}
+        <p>
+            Alpacify.Me cannot save the image without your conscent. Please
+            check the checkbox and try again.
+        </p>
+    {% endif %}
+{% endblock %}

@@ -3,7 +3,7 @@ from io import BytesIO
 from PIL import Image
 import cv2 as cv
 import numpy as np
-import base64
+from base64 import b64encode
 import random
 
 def detectFaces(img):
@@ -32,9 +32,10 @@ def alpacify(data):
     format = img.format
     mode = img.mode
     img = np.array(img)
-    for (x,y,w,h) in detectFaces(img):
+    faces = detectFaces(img)
+    for (x,y,w,h) in faces:
         pasteAlpaca(img,x,y,w,h)
     out = Image.fromarray(img, mode)
     outp = BytesIO()
     out.save(outp, format=format)
-    return base64.b64encode(outp.getvalue()).decode('utf-8')
+    return b64encode(outp.getvalue()).decode('utf-8'), (len(faces) != False)

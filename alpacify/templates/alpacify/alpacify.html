@@ -1,8 +1,29 @@
 {% extends 'alpacify/template.html' %}
 
 {% block content %}
-    {% if success %}
+    {% if not face %}
+        We could not find any face in this image. Try with another one to see
+        the fluffiness!
+    {% elif success %}
         <center><img src='{{ img }}' alt='The fluffy you' /></center>
+        <fieldset>
+            <legend>Share the fluff!</legend>
+            <p>
+                Look at you, with all that fluff! It really suits you! Only you
+                can currently see the image, but you can check the checkbox
+                below and hit 'Share the Fluff!' if you want others to be able
+                to see the image in our <a href="gallery">gallery</a>!
+            </p>
+            <form method="post" action="share">
+                {% csrf_token %}
+                <input type='hidden' value='{{ img }}' name='img'/>
+                <input type='checkbox' name='conscent' required/>
+                <label for='conscent'>
+                    I conscent to this image being stored and showed publicly
+                </label><br />
+                <input type='submit' value='Share the Fluff!' />
+            </form>
+        </fieldset>
     {% else %}
         Upload failed, please <a href='index'>try again</a>.
     {% endif %}

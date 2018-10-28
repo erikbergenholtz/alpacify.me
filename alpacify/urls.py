@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('index', views.index, name='index'),
     path('alpacify', views.upload, name='alpacify'),
+    path('share', views.share, name='share'),
     path('gallery', views.gallery, name='gallery'),
     path('about', views.about, name='about'),
     path('credits', views.credits, name='credits'),

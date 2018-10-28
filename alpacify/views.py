@@ -3,21 +3,32 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-from . forms import UploadImageForm
+from . forms import UploadImageForm, ShareFluffForm
 from . alpacify import alpacify
 
 def index(request):
     return render(request, 'alpacify/index.html', None)
 
 def upload(request):
-    cxt = {'success': False, 'img': ''}
+    cxt = {'success': False, 'noface': False, 'img': ''}
     if request.method == 'POST':
         form = UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
             f = request.FILES['img']
             cxt['success'] = True
-            cxt['img'] = 'data:{};base64,{}'.format(f.content_type,alpacify(f.read()))
+            alpacified, cxt['face'] = alpacify(f.read())
+            cxt['img'] = 'data:{};base64,{}'.format(f.content_type,alpacified)
     return render(request, 'alpacify/alpacify.html', cxt)
+
+def share(request):
+    cxt = {'valid': False}
+    if request.method == 'POST':
+        form = ShareFluffForm(request.POST)
+        if form.is_valid():
+            img = request.POST['img']
+            print(img)
+            cxt['valid'] = True
+    return render(request, 'alpacify/share.html', cxt)
 
 def credits(request):
     cxt = { 'viking_web': 'http://erikbergenholtz.se',
