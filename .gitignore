@@ -2,6 +2,8 @@
 alpacifyme/
 manage.py
 db.sqlite3
+.*.swp
+.*.swo
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

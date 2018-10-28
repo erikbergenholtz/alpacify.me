@@ -49,3 +49,11 @@ Now all you need to do is add Alpacify to ``mysite/settings.py`` and
 Once this is done, you should be able to test the application with the builtin
 webserver in Django by running ``mysite/manage.py runserver`` and going to
 ``localhost:8000``.
+
+Supported image formats
+-----------------------
+AlpacifyMe is supports alpacifying the following image formats:
+
+* JPEG
+* PNG
+* BMP

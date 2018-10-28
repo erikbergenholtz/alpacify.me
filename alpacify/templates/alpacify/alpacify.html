@@ -1,0 +1,9 @@
+{% extends 'alpacify/template.html' %}
+
+{% block content %}
+    {% if success %}
+        <center><img src='{{ img }}' alt='The fluffy you' /></center>
+    {% else %}
+        Upload failed, please <a href='index'>try again</a>.
+    {% endif %}
+{% endblock %}
