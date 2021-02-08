@@ -43,7 +43,11 @@ def credits(request):
     return render(request, 'alpacify/credit.html', cxt)
 
 def gallery(request):
-    return render(request, 'alpacify/todo.html', None)
+    print(list(Image.objects.values_list('image_b64')))
+    cxt = {
+        'images': [img[0] for img in Image.objects.values_list('image_b64')]
+    }
+    return render(request, 'alpacify/gallery.html', cxt)
 
 def contact(request):
     cxt = {'mail': 'contact@alpacify.me'}

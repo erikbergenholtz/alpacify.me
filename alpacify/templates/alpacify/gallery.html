@@ -1,0 +1,12 @@
+{% extends "alpacify/template.html" %}
+<style>
+.alpacified:hover{
+    width:60%;
+}
+</style>
+{% block content %}
+    {% for img in images %}
+        <img src='{{ img }}' width=30% style="width:30%;margin:7px 1% 7px
+        1%;"/>
+    {% endfor %}
+{% endblock %}
